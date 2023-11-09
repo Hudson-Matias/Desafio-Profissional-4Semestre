@@ -1,4 +1,4 @@
-package br.edu.unicesumar.desafioProfissional.model.controller;
+package br.edu.unicesumar.desafioProfissional.controller;
 
 import br.edu.unicesumar.desafioProfissional.model.domain.Paciente;
 import br.edu.unicesumar.desafioProfissional.model.services.ServicesPaciente;
