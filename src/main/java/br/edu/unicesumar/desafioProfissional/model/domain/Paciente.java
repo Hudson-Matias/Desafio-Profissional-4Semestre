@@ -1,9 +1,6 @@
 package br.edu.unicesumar.desafioProfissional.model.domain;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -25,18 +22,15 @@ public class Paciente implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+
     @Column(name = "cpf", length = 11)
     private String cpf;
 
     private String nome;
 
     private String email;
-
-//    private String cep;
-//
-//    private String rua;
-//
-//    private int numero;
 
     @Override
     public boolean equals(Object o) {
