@@ -22,7 +22,7 @@ public class ControllerPaciente {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Paciente> getId(@PathVariable Long id){
+    public ResponseEntity<Paciente> getId(@PathVariable String id){
         Optional<Paciente> paciente = repositoryPaciente.findById(id);
         if (paciente.isPresent()){
             return ResponseEntity.ok(paciente.get());
@@ -41,7 +41,7 @@ public class ControllerPaciente {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Paciente> update(@PathVariable Long id, @RequestBody Paciente editPaciente){
+    public ResponseEntity<Paciente> update(@PathVariable String id, @RequestBody Paciente editPaciente){
         Paciente paciente = repositoryPaciente.findById(id).orElse(new Paciente());
 
         paciente.setId(editPaciente.getId());
@@ -53,7 +53,7 @@ public class ControllerPaciente {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> delete(@PathVariable("id") Long id){
+    public ResponseEntity<Void> delete(@PathVariable("id") String id){
         repositoryPaciente.deleteById(id);
         return ResponseEntity.noContent().build();
     }

@@ -1,6 +1,7 @@
 package br.edu.unicesumar.desafioProfissional.controller;
 
 import br.edu.unicesumar.desafioProfissional.model.domain.Medico;
+import br.edu.unicesumar.desafioProfissional.model.repository.MedicoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,11 +15,11 @@ import java.util.List;
 public class MedicoController {
 
     @Autowired
-    private MedicoServices services;
+    private MedicoRepository medicoRepository;
 
     @GetMapping
     public ResponseEntity<List<Medico>> findAll(){
-        List<Medico> list = services.findAll();
+        List<Medico> list = medicoRepository.findAll();
         return ResponseEntity.ok().body(list);
     }
 

@@ -18,12 +18,9 @@ import java.util.Objects;
 @Data
 public class Paciente implements Serializable {
 
-    @Serial
-    private static final long serialVersionUID = 1L;
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private String id;
 
     @Column(name = "cpf", length = 11)
     private String cpf;
