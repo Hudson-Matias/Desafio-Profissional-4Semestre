@@ -23,7 +23,7 @@ public class Medico implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private String id;
 
     @Column(name = "crm", length = 6)
     private Integer crm;
